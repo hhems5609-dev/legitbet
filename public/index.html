@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEGIT BET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- TOP NAV -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="menu-btn" onclick="toggleSidebar()">&#9776;</button>
+      <div class="brand">
+        <span class="brand-legit">LEGIT</span><span class="brand-bet">BET</span><span class="brand-dot">.COM</span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="balance-chip">
+        <span class="balance-label">Balance</span>
+        <span class="balance-amount" id="userBalance">KES 0.00</span>
+      </div>
+      <button class="deposit-btn" onclick="openModal('depositModal')">Deposit</button>
+      <button class="icon-btn">&#128269;</button>
+      <button class="icon-btn">&#128276;</button>
+    </div>
+  </header>
+
+  <!-- CATEGORY TABS -->
+  <nav class="cat-tabs">
+    <button class="cat-tab active" onclick="switchTab('soccer', this)">&#9917; Soccer</button>
+    <button class="cat-tab" onclick="switchTab('basketball', this)">&#127944; Basketball</button>
+    <button class="cat-tab" onclick="switchTab('casino', this)">&#127183; Casino</button>
+    <button class="cat-tab new-badge" onclick="switchTab('crash', this)">&#128640; Crash</button>
+    <button class="cat-tab" onclick="switchTab('virtual', this)">&#127918; Virtuals</button>
+    <button class="cat-tab" onclick="switchTab('tennis', this)">&#127934; Tennis</button>
+  </nav>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="brand sidebar-brand">
+        <span class="brand-legit">LEGIT</span><span class="brand-bet">BET</span>
+      </div>
+      <button onclick="toggleSidebar()" class="close-sidebar">&#10005;</button>
+    </div>
+    <ul class="sidebar-menu">
+      <li onclick="switchTab('soccer', null); toggleSidebar()">&#9917; Soccer</li>
+      <li onclick="switchTab('basketball', null); toggleSidebar()">&#127944; Basketball</li>
+      <li onclick="switchTab('casino', null); toggleSidebar()">&#127183; Casino</li>
+      <li onclick="switchTab('crash', null); toggleSidebar()">&#128640; Crash Games</li>
+      <li onclick="switchTab('virtual', null); toggleSidebar()">&#127918; Virtuals</li>
+      <li onclick="switchTab('jackpot', null); toggleSidebar()">&#127881; Jackpot</li>
+      <li onclick="openModal('depositModal'); toggleSidebar()">&#128179; Deposit</li>
+      <li onclick="openModal('withdrawModal'); toggleSidebar()">&#128184; Withdraw</li>
+      <li>&#128100; My Account</li>
+      <li>&#128203; My Bets</li>
+      <li>&#128680; Promotions</li>
+    </ul>
+  </div>
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- PROMO BANNER -->
+  <div class="promo-banner" id="promoBanner">
+    <div class="promo-inner">
+      <div class="promo-text">
+        <span class="promo-big">MIDWEEK</span>
+        <span class="promo-jackpot">JACKPOT</span>
+        <span class="promo-sub">Stake from KES 15 only!</span>
+      </div>
+      <div class="promo-amount">
+        <span class="promo-num">50</span>
+        <span class="promo-mil">Million</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <!-- SOCCER TAB -->
+    <div id="tab-soccer" class="tab-section active">
+      <div class="section-filters">
+        <button class="filter-btn active">Highlights</button>
+        <button class="filter-btn">Upcoming</button>
+        <button class="filter-btn">Countries</button>
+        <button class="filter-btn">Jackpots</button>
+        <button class="filter-btn">Turbo</button>
+      </div>
+      <div class="odds-header">
+        <span>Teams</span>
+        <span>1</span><span>X</span><span>2</span>
+      </div>
+      <div id="soccerGames" class="games-list">
+        <div class="loading-spinner">&#9654; Loading live odds...</div>
+      </div>
+    </div>
+
+    <!-- BASKETBALL TAB -->
+    <div id="tab-basketball" class="tab-section">
+      <div class="odds-header">
+        <span>Teams</span><span>1</span><span>X</span><span>2</span>
+      </div>
+      <div id="basketballGames" class="games-list">
+        <div class="loading-spinner">&#9654; Loading live odds...</div>
+      </div>
+    </div>
+
+    <!-- CASINO TAB -->
+    <div id="tab-casino" class="tab-section">
+      <h2 class="section-title">&#127183; Live Casino</h2>
+      <div class="casino-grid" id="casinoGrid">
+        <div class="casino-card" onclick="openCasinoGame('roulette')">
+          <div class="casino-img roulette-bg">&#127922;</div>
+          <div class="casino-name">Roulette</div>
+          <div class="casino-sub">Live Dealer</div>
+        </div>
+        <div class="casino-card" onclick="openCasinoGame('blackjack')">
+          <div class="casino-img blackjack-bg">&#127137;</div>
+          <div class="casino-name">Blackjack</div>
+          <div class="casino-sub">Live Dealer</div>
+        </div>
+        <div class="casino-card" onclick="openCasinoGame('baccarat')">
+          <div class="casino-img baccarat-bg">&#127153;</div>
+          <div class="casino-name">Baccarat</div>
+          <div class="casino-sub">Live Dealer</div>
+        </div>
+        <div class="casino-card" onclick="openCasinoGame('slots')">
+          <div class="casino-img slots-bg">&#127381;</div>
+          <div class="casino-name">Slots</div>
+          <div class="casino-sub">500+ Games</div>
+        </div>
+        <div class="casino-card" onclick="openCasinoGame('dice')">
+          <div class="casino-img dice-bg">&#127922;</div>
+          <div class="casino-name">Lucky Dice</div>
+          <div class="casino-sub">Instant Win</div>
+        </div>
+        <div class="casino-card" onclick="openCasinoGame('poker')">
+          <div class="casino-img poker-bg">&#9829;</div>
+          <div class="casino-name">Poker</div>
+          <div class="casino-sub">Texas Hold'em</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRASH TAB -->
+    <div id="tab-crash" class="tab-section">
+      <h2 class="section-title">&#128640; Crash Games</h2>
+      <div class="crash-game-area">
+        <div class="crash-display" id="crashDisplay">
+          <div class="crash-multiplier" id="crashMultiplier">1.00x</div>
+          <div class="crash-graph" id="crashGraph">
+            <canvas id="crashCanvas" width="340" height="180"></canvas>
+          </div>
+          <div class="crash-status" id="crashStatus">Waiting for next round...</div>
+        </div>
+        <div class="crash-controls">
+          <div class="crash-input-row">
+            <label>Bet Amount (KES)</label>
+            <input type="number" id="crashBetAmount" class="crash-input" value="100" min="10" />
+          </div>
+          <div class="crash-input-row">
+            <label>Auto Cashout at</label>
+            <input type="number" id="autoCashout" class="crash-input" value="2.00" step="0.10" />
+          </div>
+          <button class="crash-bet-btn" id="crashBetBtn" onclick="placeCrashBet()">PLACE BET</button>
+          <button class="crash-cashout-btn" id="cashoutBtn" onclick="cashOut()" disabled>CASH OUT</button>
+        </div>
+        <div class="crash-history">
+          <h3>Recent Results</h3>
+          <div class="crash-history-list" id="crashHistoryList"></div>
+        </div>
+      </div>
+      <!-- AVIATOR Style -->
+      <h2 class="section-title" style="margin-top:20px">&#9992; Aviator</h2>
+      <div class="aviator-card" onclick="openCasinoGame('aviator')">
+        <div class="aviator-plane">&#128747;</div>
+        <div class="aviator-info">
+          <span class="aviator-title">AVIATOR</span>
+          <span class="aviator-sub">Watch the plane fly &amp; cash out before it crashes!</span>
+          <button class="play-btn">PLAY NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIRTUAL TAB -->
+    <div id="tab-virtual" class="tab-section">
+      <h2 class="section-title">&#127918; Virtual Sports</h2>
+      <div class="virtual-grid">
+        <div class="virtual-card" onclick="openVirtual('football')">
+          <div class="virtual-icon">&#9917;</div>
+          <div class="virtual-name">Virtual Football</div>
+          <div class="virtual-timer" id="vTimer1">Next: 00:45</div>
+        </div>
+        <div class="virtual-card" onclick="openVirtual('horse')">
+          <div class="virtual-icon">&#127943;</div>
+          <div class="virtual-name">Virtual Horse Racing</div>
+          <div class="virtual-timer" id="vTimer2">Next: 01:20</div>
+        </div>
+        <div class="virtual-card" onclick="openVirtual('dogs')">
+          <div class="virtual-icon">&#128021;</div>
+          <div class="virtual-name">Virtual Dogs</div>
+          <div class="virtual-timer" id="vTimer3">Next: 00:30</div>
+        </div>
+        <div class="virtual-card" onclick="openVirtual('basketball')">
+          <div class="virtual-icon">&#127944;</div>
+          <div class="virtual-name">Virtual Basketball</div>
+          <div class="virtual-timer" id="vTimer4">Next: 02:10</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JACKPOT TAB -->
+    <div id="tab-jackpot" class="tab-section">
+      <div class="jackpot-hero">
+        <div class="jackpot-title">&#127881; MEGA JACKPOT</div>
+        <div class="jackpot-amount" id="jackpotAmount">KES 50,000,000</div>
+        <div class="jackpot-stake">Stake only KES 15</div>
+        <button class="jackpot-play-btn" onclick="openModal('jackpotModal')">PLAY JACKPOT</button>
+      </div>
+      <div id="jackpotGames" class="games-list"></div>
+    </div>
+  </main>
+
+  <!-- BETSLIP FLOATING BUTTON -->
+  <div class="betslip-fab" id="betslipFab" onclick="openModal('betslipModal')">
+    &#128203; Betslip <span class="betslip-count" id="betslipCount">0</span>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <button class="bnav-btn active" onclick="switchTab('soccer', null)">
+      <span>&#8962;</span><small>Home</small>
+    </button>
+    <button class="bnav-btn" onclick="showLive()">
+      <span>&#9654;</span><small>Live</small>
+      <span class="live-badge" id="liveBadge">0</span>
+    </button>
+    <button class="bnav-btn center-btn" onclick="openModal('betslipModal')">
+      <span>&#128203;</span><small>Betslip</small>
+    </button>
+    <button class="bnav-btn" onclick="openModal('myBetsModal')">
+      <span>&#128203;</span><small>My Bets</small>
+    </button>
+    <button class="bnav-btn" onclick="openModal('profileModal')">
+      <span>&#128100;</span><small>Profile</small>
+    </button>
+  </nav>
+
+  <!-- MODALS -->
+  <!-- Betslip Modal -->
+  <div class="modal" id="betslipModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>&#128203; My Betslip</h3>
+        <button onclick="closeModal('betslipModal')">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <div id="betslipItems" class="betslip-items"></div>
+        <div class="betslip-footer" id="betslipFooter" style="display:none">
+          <div class="betslip-total-row">
+            <span>Total Odds:</span><span id="totalOdds">0.00</span>
+          </div>
+          <div class="betslip-total-row">
+            <span>Potential Win:</span><span id="potentialWin">KES 0.00</span>
+          </div>
+          <input type="number" id="stakeAmount" class="stake-input" placeholder="Enter stake (KES)" oninput="calcWin()" value="100" />
+          <button class="place-bet-btn" onclick="placeBet()">PLACE BET</button>
+          <button class="clear-btn" onclick="clearBetslip()">Clear All</button>
+        </div>
+        <div id="emptySlip" class="empty-slip">No selections yet. Pick a game!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deposit Modal -->
+  <div class="modal" id="depositModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>&#128179; Deposit</h3>
+        <button onclick="closeModal('depositModal')">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <div class="mpesa-logo">M-PESA</div>
+        <p class="modal-info">Enter your M-Pesa number and amount to deposit instantly.</p>
+        <input type="tel" id="mpesaPhone" class="modal-input" placeholder="07XXXXXXXX" />
+        <input type="number" id="depositAmt" class="modal-input" placeholder="Amount (KES)" min="10" />
+        <button class="place-bet-btn" onclick="processDeposit()">DEPOSIT NOW</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Withdraw Modal -->
+  <div class="modal" id="withdrawModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>&#128184; Withdraw</h3>
+        <button onclick="closeModal('withdrawModal')">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-info">Withdraw your winnings to M-Pesa instantly.</p>
+        <input type="tel" id="withdrawPhone" class="modal-input" placeholder="07XXXXXXXX" />
+        <input type="number" id="withdrawAmt" class="modal-input" placeholder="Amount (KES)" min="100" />
+        <button class="place-bet-btn" onclick="processWithdraw()">WITHDRAW NOW</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Modal -->
+  <div class="modal" id="profileModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>&#128100; Profile</h3>
+        <button onclick="closeModal('profileModal')">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <div class="profile-avatar">&#128100;</div>
+        <div class="profile-info">
+          <p><strong>Username:</strong> <span id="profileUsername">Guest</span></p>
+          <p><strong>Balance:</strong> <span id="profileBalance">KES 0.00</span></p>
+          <p><strong>Total Bets:</strong> <span id="profileBets">0</span></p>
+        </div>
+        <button class="place-bet-btn" onclick="loginUser()">LOGIN / REGISTER</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- My Bets Modal -->
+  <div class="modal" id="myBetsModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>&#128203; My Bets</h3>
+        <button onclick="closeModal('myBetsModal')">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <div id="myBetsList" class="my-bets-list"><p class="empty-slip">No bets placed yet.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jackpot Modal -->
+  <div class="modal" id="jackpotModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>&#127881; Play Jackpot</h3>
+        <button onclick="closeModal('jackpotModal')">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-info">Pick all correct results to win the Mega Jackpot of <strong>KES 50,000,000</strong>!</p>
+        <p class="modal-info">Stake: <strong>KES 15</strong> only</p>
+        <button class="place-bet-btn" onclick="closeModal('jackpotModal'); switchTab('soccer', null)">SELECT GAMES</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

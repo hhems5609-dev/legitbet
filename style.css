@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0d1220;
+  color: #fff;
+  padding-bottom: 90px;
+}
+
+.topbar {
+  background: #121a2b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid #1d2940;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo span {
+  color: #f9c300;
+}
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.deposit {
+  background: #f9c300;
+  color: #111;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.icon {
+  background: #1a2437;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.tabs {
+  display: flex;
+  overflow-x: auto;
+  background: #121a2b;
+  padding: 10px;
+  gap: 10px;
+}
+
+.tabs button {
+  background: #1a2437;
+  border: none;
+  color: #cfd6e6;
+  padding: 10px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.tabs .active {
+  background: #f9c300;
+  color: #111;
+  font-weight: bold;
+}
+
+.banner {
+  padding: 14px;
+}
+
+.banner-card {
+  background: linear-gradient(135deg, #1f2d46, #2d4568);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.banner-card h2 {
+  color: #f9c300;
+  margin-bottom: 8px;
+}
+
+.match-list {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.match-card {
+  background: #121a2b;
+  border: 1px solid #1d2940;
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.league {
+  font-size: 12px;
+  color: #8ca0c7;
+  margin-bottom: 10px;
+}
+
+.teams {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.team {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-name {
+  font-size: 15px;
+}
+
+.odds {
+  display: flex;
+  gap: 8px;
+}
+
+.odd {
+  background: #1a2437;
+  padding: 8px 12px;
+  border-radius: 10px;
+  min-width: 60px;
+  text-align: center;
+  font-weight: bold;
+  color: #f9c300;
+}
+
+.time {
+  font-size: 12px;
+  color: #9db0d3;
+  margin-top: 8px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #121a2b;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #1d2940;
+}
+
+.bottom-nav button {
+  background: none;
+  border: none;
+  color: #cfd6e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+}
+
+.bottom-nav button span {
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.bottom-nav .center {
+  background: #f9c300;
+  color: #111;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+}
