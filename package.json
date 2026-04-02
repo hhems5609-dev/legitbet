@@ -8,8 +8,8 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
+    "cors": "^2.8.6",
+    "express": "^4.22.1",
     "node-fetch": "^2.7.0"
   },
   "devDependencies": {
@@ -17,5 +17,17 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hhems5609-dev/legitbet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hhems5609-dev/legitbet/issues"
+  },
+  "homepage": "https://github.com/hhems5609-dev/legitbet#readme"
 }
