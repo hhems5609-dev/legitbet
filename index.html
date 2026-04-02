@@ -3,54 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LegitBet | Live Sports</title>
+    <title>LegitBet | Live</title>
     <style>
-        body { background-color: #0b0e11; color: white; font-family: sans-serif; margin: 0; padding-bottom: 70px; }
-        .header { background: #15191d; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #00ff88; }
+        body { background: #0b0e11; color: white; font-family: sans-serif; margin: 0; padding-bottom: 80px; }
+        .header { background: #15191d; padding: 15px; display: flex; justify-content: space-between; border-bottom: 2px solid #00ff88; }
         .logo { color: #00ff88; font-weight: bold; font-size: 20px; }
-        .jackpot-banner { background: linear-gradient(90deg, #004d2c, #008f4f); margin: 10px; padding: 20px; border-radius: 10px; position: relative; }
-        .tabs { display: flex; overflow-x: auto; gap: 10px; padding: 10px; background: #15191d; sticky: top; }
-        .tab { background: #2b2f36; padding: 8px 15px; border-radius: 20px; font-size: 13px; white-space: nowrap; border: none; color: white; min-width: 80px; }
-        .tab.active { background: #00ff88; color: black; }
+        .jackpot { background: linear-gradient(90deg, #004d2c, #008f4f); margin: 10px; padding: 20px; border-radius: 10px; }
         
-        /* THE MATCH CONTAINER */
-        #odds-container { min-height: 300px; display: flex; flex-direction: column; gap: 10px; padding: 10px; }
+        /* THE BOX WHERE MATCHES GO */
+        #odds-container { min-height: 200px; padding: 10px; }
         
-        .nav-bar { position: fixed; bottom: 0; width: 100%; background: #15191d; display: flex; justify-content: space-around; padding: 12px 0; border-top: 1px solid #333; }
-        .nav-item { color: #888; font-size: 10px; text-align: center; border: none; background: none; }
-        .nav-active { color: #00ff88; }
+        .match-card { background: #1e2124; margin-bottom: 10px; padding: 15px; border-radius: 8px; border: 1px solid #333; }
+        .odds-row { display: flex; gap: 10px; margin-top: 10px; }
+        .odd-btn { flex: 1; background: #2b2f36; color: #00ff88; border: none; padding: 10px; border-radius: 5px; font-weight: bold; }
     </style>
 </head>
 <body>
-
     <div class="header">
-        <div class="logo">LEGITBET<span style="color:white">.COM</span></div>
-        <button style="background:#ffda00; border:none; padding:8px 15px; border-radius:5px; font-weight:bold;">Deposit</button>
+        <div class="logo">LEGITBET</div>
+        <button style="background:#ffda00; border:none; padding:5px 15px; border-radius:4px;">Deposit</button>
     </div>
 
-    <div class="jackpot-banner">
-        <div style="font-size: 12px; opacity: 0.8;">MIDWEEK</div>
-        <div style="font-size: 28px; font-weight: bold;">JACKPOT</div>
-        <div style="color: #00ff88;">Stake from KES 15 only!</div>
-        <div style="position: absolute; right: 20px; top: 10px; font-size: 40px; font-weight: bold; opacity: 0.2;">50M</div>
-    </div>
-
-    <div class="tabs">
-        <button class="tab active">Highlights</button>
-        <button class="tab">Upcoming</button>
-        <button class="tab">Countries</button>
-        <button class="tab">Jackpots</button>
+    <div class="jackpot">
+        <div style="font-weight:bold;">MIDWEEK JACKPOT</div>
+        <div style="color:#00ff88; font-size:12px;">Stake KES 15 -> Win 50M</div>
     </div>
 
     <div id="odds-container">
-        <p style="text-align: center; color: #888; margin-top: 40px;">Fetching latest markets...</p>
-    </div>
-
-    <div class="nav-bar">
-        <button class="nav-item nav-active">🏠<br>HOME</button>
-        <button class="nav-item">▶️<br>LIVE</button>
-        <button class="nav-item">📋<br>BETSLIP</button>
-        <button class="nav-item">👤<br>PROFILE</button>
+        <p style="text-align:center; color:#888;">Searching for live matches...</p>
     </div>
 
     <script src="app.js"></script>
