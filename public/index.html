@@ -3,65 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LegitBet</title>
+    <title>LegitBet | Professional</title>
     <style>
-        body { 
-    background-color: #0b0e11; 
-    color: white; 
-    font-family: 'Roboto', sans-serif; 
-    margin: 0; 
-    padding-bottom: 70px; 
-}
-.header { 
-    background: #15191d; 
-    padding: 15px; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    border-bottom: 1px solid #2b2f36; 
-}
-.logo { color: #00ff88; font-weight: bold; font-size: 20px; letter-spacing: 1px; }
-.jackpot-banner { 
-    background: linear-gradient(135deg, #004d2c 0%, #008f4f 100%); 
-    margin: 12px; 
-    padding: 20px; 
-    border-radius: 12px; 
-    position: relative;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-.match-card { 
-    background: #15191d; 
-    margin: 10px; 
-    padding: 15px; 
-    border-radius: 8px; 
-    border-left: 4px solid #00ff88; 
-}
-.odds-row { display: flex; gap: 8px; margin-top: 12px; }
-.btn-odd { 
-    flex: 1; 
-    background: #2b2f36; 
-    color: #00ff88; 
-    border: none; 
-    padding: 10px; 
-    border-radius: 4px; 
-    font-weight: bold;
-    font-size: 14px;
-}
+        /* Restoring original professional colors and fonts */
+        body { background-color: #0b0e11; color: white; font-family: 'Roboto', sans-serif; margin: 0; padding-bottom: 80px; }
+        .header { background: #15191d; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2b2f36; }
+        .logo { color: #00ff88; font-weight: bold; font-size: 20px; }
+        .balance-box { background: rgba(255,255,255,0.05); padding: 5px 15px; border-radius: 20px; font-size: 12px; }
+        
+        .jackpot-banner { 
+            background: linear-gradient(135deg, #004d2c 0%, #008f4f 100%); 
+            margin: 12px; padding: 20px; border-radius: 12px; position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .tabs { display: flex; overflow-x: auto; gap: 10px; padding: 10px; background: #15191d; }
+        .tab { background: #2b2f36; padding: 8px 15px; border-radius: 20px; font-size: 13px; border: none; color: white; white-space: nowrap; }
+        .tab.active { background: #00ff88; color: black; font-weight: bold; }
+
+        /* Professional Match Cards Styling */
+        .match-card { background: #15191d; margin: 10px; padding: 15px; border-radius: 8px; border-left: 4px solid #00ff88; }
+        .odds-row { display: flex; gap: 8px; margin-top: 12px; }
+        .btn-odd { 
+            flex: 1; background: #2b2f36; color: #00ff88; border: none; 
+            padding: 12px; border-radius: 4px; font-weight: bold; font-size: 14px;
+        }
+
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: #15191d; display: flex; justify-content: space-around; padding: 12px 0; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="logo">LEGITBET</div>
+        <div class="logo">LEGITBET<span style="color:white">.COM</span></div>
+        <div class="balance-box">BALANCE <span style="color:#00ff88; display:block; font-weight:bold;">KES 0.00</span></div>
         <button style="background:#ffda00; border:none; padding:8px 15px; border-radius:5px; font-weight:bold;">Deposit</button>
     </div>
 
-    <div class="banner">
-        <div style="font-weight:bold;">MIDWEEK JACKPOT</div>
-        <div style="color:#00ff88;">KES 15 -> 50,000,000</div>
+    <div class="jackpot-banner">
+        <div style="font-size: 12px; opacity: 0.8;">MIDWEEK</div>
+        <div style="font-size: 24px; font-weight: bold;">JACKPOT</div>
+        <div style="color: #00ff88;">Stake from KES 15 only!</div>
+        <div style="position: absolute; right: 20px; top: 10px; font-size: 40px; font-weight: bold; opacity: 0.2;">50M</div>
     </div>
 
-    <div id="odds-container">
-        <p style="text-align:center; color:#888;">Loading Live Markets...</p>
+    <div class="tabs">
+        <button class="tab active">Highlights</button>
+        <button class="tab">Upcoming</button>
+        <button class="tab">Countries</button>
+        <button class="tab">Jackpots</button>
+    </div>
+
+    <div id="odds-container"></div>
+
+    <div class="bottom-nav">
+        <div style="text-align:center; color:#00ff88; font-size:10px;">🏠<br>HOME</div>
+        <div style="text-align:center; color:#888; font-size:10px;">▶️<br>LIVE</div>
+        <div style="text-align:center; color:#888; font-size:10px;">📋<br>BETSLIP</div>
+        <div style="text-align:center; color:#888; font-size:10px;">👤<br>PROFILE</div>
     </div>
 
     <script src="app.js"></script>
