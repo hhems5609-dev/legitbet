@@ -1,45 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LEGIT BET.COM</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegitBet | Live Betting</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #0b0e11; color: white; font-family: sans-serif; margin: 0; }
+        .header { background: #15191d; padding: 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #00ff88; }
+        .logo { color: #00ff88; font-weight: bold; font-size: 20px; }
+        .jackpot-banner { background: linear-gradient(90deg, #004d2c, #008f4f); margin: 10px; padding: 20px; border-radius: 10px; position: relative; }
+        .tabs { display: flex; overflow-x: auto; gap: 10px; padding: 10px; background: #15191d; }
+        .tab { background: #2b2f36; padding: 8px 15px; border-radius: 20px; font-size: 13px; white-space: nowrap; border: none; color: white; }
+        .tab.active { background: #00ff88; color: black; }
+        #odds-container { padding-bottom: 80px; } /* Space for bottom nav */
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: #15191d; display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid #333; }
+    </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="logo">LEGIT <span>BET.COM</span></div>
-    <div class="top-actions">
-      <button class="deposit">Deposit</button>
-      <button class="icon">🔍</button>
-      <button class="icon">☰</button>
+
+    <div class="header">
+        <div class="logo">LEGITBET<span style="color:white">.COM</span></div>
+        <button style="background:#ffda00; border:none; padding:8px 15px; border-radius:5px; font-weight:bold;">Deposit</button>
     </div>
-  </header>
 
-  <nav class="tabs">
-    <button class="active">Soccer</button>
-    <button>Basketball</button>
-    <button>Tennis</button>
-    <button>Jackpots</button>
-  </nav>
-
-  <section class="banner">
-    <div class="banner-card">
-      <h2>RUSH HOUR</h2>
-      <p>Fast odds-style sports demo UI</p>
+    <div class="jackpot-banner">
+        <div style="font-size: 12px; opacity: 0.8;">MIDWEEK</div>
+        <div style="font-size: 28px; font-weight: bold;">JACKPOT</div>
+        <div style="color: #00ff88;">Stake from KES 15 only!</div>
+        <div style="position: absolute; right: 20px; top: 10px; font-size: 40px; font-weight: bold; opacity: 0.3;">50M</div>
     </div>
-  </section>
 
-  <section class="match-list" id="matchList"></section>
+    <div class="tabs">
+        <button class="tab active">Highlights</button>
+        <button class="tab">Upcoming</button>
+        <button class="tab">Countries</button>
+        <button class="tab">Jackpots</button>
+    </div>
 
-  <footer class="bottom-nav">
-    <button>🏠<span>Home</span></button>
-    <button>📰<span>Live</span></button>
-    <button class="center">🟡</button>
-    <button>🎟️<span>My Picks</span></button>
-    <button>👤<span>Account</span></button>
-  </footer>
+    <div id="odds-container">
+        <p style="text-align:center; padding: 20px; color: #888;">Connecting to live markets...</p>
+    </div>
 
-  <script src="script.js"></script>
+    <div class="bottom-nav">
+        <div style="text-align:center; color:#00ff88; font-size:10px;">🏠<br>HOME</div>
+        <div style="text-align:center; color:#888; font-size:10px;">▶️<br>LIVE</div>
+        <div style="text-align:center; color:#888; font-size:10px;">📋<br>BETSLIP</div>
+        <div style="text-align:center; color:#888; font-size:10px;">👤<br>PROFILE</div>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
